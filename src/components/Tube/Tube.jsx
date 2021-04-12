@@ -33,82 +33,6 @@ const Tube = () => {
   const [result, setResult] = useState(null);
   const [notFound, setNotFound] = useState(false);
 
-  const dummyData = {
-    codeNumber: 40000,
-    microorganisms: [
-      {
-        microorganism: 'Yersinia pestis',
-        atypicalTests: ['NONE'],
-        snippet:
-          "Yersinia pestis (formerly Pasteurella pestis) is a gram-negative, non-motile, rod-shaped, coccobacillus bacterium, without spores. It is a facultative anaerobic organism that can infect humans via the Oriental rat flea (Xenopsylla cheopis). It causes the disease plague, which takes three main forms: pneumonic, septicemic, and bubonic. There may be evidence suggesting Y. pestis originated in Europe in the Cucuteni–Trypillia culture and not in Asia as is more commonly believed.Y. pestis was discovered in 1894 by Alexandre Yersin, a Swiss/French physician and bacteriologist from the Pasteur Institute, during an epidemic of the plague in Hong Kong. Yersin was a member of the Pasteur school of thought. Kitasato Shibasaburō, a Japanese bacteriologist who practised Koch's methodology, was also engaged at the time in finding the causative agent of the plague.",
-        wikiTitle: 'Yersinia pestis',
-      },
-      {
-        microorganism: 'Shigella sp.',
-        atypicalTests: ['NONE'],
-        snippet:
-          'Shigella is a genus of bacteria that is Gram-negative, facultative anaerobic, non-spore-forming, nonmotile, rod-shaped and genetically closely related...',
-        wikiTitle: 'Shigella',
-      },
-      {
-        microorganism: 'Pantoea agglomerans',
-        atypicalTests: ['ADO', 'ARA'],
-        snippet:
-          'Pantoea agglomerans is a Gram-negative bacterium that belongs to the family Erwiniaceae.\n' +
-          "It was formerly called Enterobacter agglomerans, or Erwinia herbicola and is an ubiquitous bacterium commonly isolated from plant surfaces, seeds, fruit, and animal or human feces and can be found throughout a honeybee's environment.\n" +
-          '\n' +
-          '\n' +
-          '== Bacteriology ==\n' +
-          'Pantoea agglomerans can serve as a plant pathogen competitor for the management of plant diseases. Fire blight, a plant disease caused by bacterium Erwinia amylovora, is commonly found in pear and apple crops. After coming in contact with Erwinia amylovora, Pantoea agglomerans produces antibiotic properties that are toxic to the fire blight-inducing bacterium. It has been identified that it is possible that habitat modification or exclusion may also play a role in the effectiveness of the antibiosis of the fire blight biological control.Environmental factors influencing the growth and spread of Pantoea agglomerans include winter chilling, good sunlight exposure and quality air circulation.',
-        wikiTitle: 'Pantoea agglomerans',
-      },
-    ],
-  };
-
-  const mediumArr = [
-    glucose,
-    lysine,
-    ornithine,
-    h2s,
-    adonitol,
-    lactose,
-    arabinose,
-    lactose,
-    arabinose,
-    sorbitol,
-    vp,
-    dulcitol,
-    urea,
-    citrate,
-  ];
-
-  const useEffectDependencies = [
-    adonitol.code,
-    adonitol.result,
-    arabinose.code,
-    arabinose.result,
-    citrate.code,
-    citrate.result,
-    dulcitol.code,
-    dulcitol.result,
-    glucose.code,
-    glucose.result,
-    h2s.code,
-    h2s.result,
-    lactose.code,
-    lactose.result,
-    lysine.code,
-    lysine.result,
-    ornithine.code,
-    ornithine.result,
-    sorbitol.code,
-    sorbitol.result,
-    urea.code,
-    urea.result,
-    vp.code,
-    vp.result,
-  ];
-
   const handleGlucose = () => {
     glucose.result === 'glucose-n'
       ? setGlucose({ result: 'glucose-p', code: 4 })
@@ -370,7 +294,6 @@ const Tube = () => {
         />
       </div>
 
-      {/* const result is what will replace dummy data */}
       <div className="border" />
       {result &&
         result.microorganisms.map((bacteria) => {
