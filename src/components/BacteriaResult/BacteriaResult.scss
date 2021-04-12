@@ -1,0 +1,96 @@
+.bacteria-result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  .bacteria-description {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.atypical-tests {
+  list-style: none;
+}
+
+.atypical-test {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: 2.5px;
+    width: 7px;
+    background-color: black;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.Collapsible {
+  background-color: whitesmoke;
+  position: relative;
+  border-radius: 15px;
+  padding: 10px;
+  width: 80%;
+  margin-bottom: 3rem;
+  box-shadow: 0 0.8rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.Collapsible__contentInner {
+  padding: 15px 20px;
+  border-top: 0;
+
+  p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    line-height: 25px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.Collapsible__trigger {
+  display: block;
+  font-weight: 400;
+  text-decoration: none;
+  color: grey;
+  position: relative;
+  border: 1px solid white;
+  padding: 10px;
+  background: rgba(121, 192, 233, 0.8);
+  border-radius: 10px;
+  color: white;
+
+  &.is-open + .Collapsible__contentOuter {
+    .Collapsible__contentInner {
+      .icon {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &.is-disabled {
+    opacity: 0.5;
+    background-color: grey;
+  }
+}
+
+.icon {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 1.3rem;
+  right: 1.1rem;
+  transition: transform 300ms;
+}
+
+.fa-arrow-down {
+  color: white;
+  font-size: 1.2rem;
+}

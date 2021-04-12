@@ -1,0 +1,123 @@
+.tube {
+  // display: grid;
+  // grid-template-columns: repeat(12, max-content);
+  // grid-gap: 5px;
+  // position: relative;
+  // background-color: #fbe5c8;
+  // height: 70px;
+  // align-items: center;
+  // padding: 0 5px;
+  // border-radius: 2px;
+
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  background-color: #fbe5c8;
+  height: 70px;
+  padding: 0 0.4rem;
+  padding-top: 0.3rem;
+  border-radius: 2px;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.corner {
+  background-color: rgb(85, 207, 207);
+  width: 4.5vw;
+  height: 60px;
+  position: absolute;
+
+  &-start {
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+    left: -5.3%;
+    top: 5px;
+  }
+
+  &-end {
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+    right: -5.3%;
+    top: 5px;
+  }
+}
+
+.id-calc-container {
+  display: grid;
+  grid-template-columns: repeat(50, 1fr);
+  grid-template-rows: 1 fr 1fr;
+  width: 80vw;
+  margin: 2rem auto;
+}
+
+.triangle {
+  height: 40px;
+  clip-path: polygon(100% 0, 0 0, 50% 100%);
+  background-image: linear-gradient(
+    to bottom,
+    rgb(66, 206, 248),
+    rgb(10, 152, 196)
+  );
+}
+
+.triangle-1 {
+  grid-column: 2 / 8;
+}
+
+.triangle-2 {
+  grid-column: 11 / 16;
+}
+.triangle-3 {
+  grid-column: 19 / 29;
+}
+
+.triangle-4 {
+  grid-column: 32 / 41;
+}
+
+.triangle-5 {
+  grid-column: 41 / -2;
+}
+
+.id {
+  background-color: white;
+  border: 1px solid black;
+  height: 1.5rem;
+  text-align: center;
+  box-sizing: border-box;
+  width: 200%;
+  transform: translateX(-20%);
+
+  &-1 {
+    grid-column: 4 / 5;
+    transform: translateX(0.1%);
+  }
+
+  &-2 {
+    grid-column: 13 / 14;
+    transform: translateX(-29%);
+  }
+
+  &-3 {
+    grid-column: 23 / 24;
+    transform: translateX(-2%);
+  }
+
+  &-4 {
+    grid-column: 36 / 37;
+    transform: translateX(-25%);
+  }
+  &-5 {
+    grid-column: 45 / 46;
+  }
+}
+
+.search-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.border {
+  height: 2px;
+  width: 100%;
+  background-color: rgba(85, 147, 218, 0.4);
+  margin-top: 3rem;
+}

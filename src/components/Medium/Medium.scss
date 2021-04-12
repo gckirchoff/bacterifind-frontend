@@ -1,0 +1,350 @@
+// .medium-container {
+//   width: 7vw;
+//   position: relative;
+//   cursor: pointer;
+
+//   .medium-name {
+//     width: 100%;
+//     font-size: 0.8rem;
+//     position: absolute;
+//     top: -42px;
+//     text-align: center;
+//   }
+
+//   .medium {
+//     border: 1px solid black;
+//     height: 60px;
+//     width: 100%;
+//     background-color: white;
+//   }
+
+//   .glucose-n {
+//     background-image: linear-gradient(
+//       to bottom right,
+//       red 45%,
+//       rgb(197, 197, 197) 45%,
+//       rgb(197, 197, 197) 60%,
+//       rgb(253, 253, 253) 60%
+//     );
+//   }
+
+//   .glucose-p {
+//     background-image: linear-gradient(
+//       to bottom right,
+//       yellow 45%,
+//       rgb(197, 197, 197) 45%,
+//       rgb(197, 197, 197) 60%,
+//       rgb(253, 253, 253) 60%
+//     );
+//   }
+
+//   .glucose-p-g {
+//     background-image: linear-gradient(
+//       to bottom right,
+//       yellow 45%,
+//       white 45%,
+//       white 55%,
+//       rgb(197, 197, 197) 55%,
+//       rgb(197, 197, 197) 60%,
+//       rgb(253, 253, 253) 60%
+//     );
+//   }
+
+//   .lysine-n {
+//     background-image: linear-gradient(
+//       to bottom right,
+//       red 45%,
+//       rgb(197, 197, 197) 45%,
+//       rgb(197, 197, 197) 60%,
+//       rgb(253, 253, 253) 60%
+//     );
+//   }
+
+//   .lysine-p {
+//     background-image: linear-gradient(
+//       to bottom right,
+//       yellow 45%,
+//       rgb(197, 197, 197) 45%,
+//       rgb(197, 197, 197) 60%,
+//       rgb(253, 253, 253) 60%
+//     );
+//   }
+// }
+
+.medium {
+  border: 1px solid black;
+  height: 60px;
+  width: 100%;
+  background-color: white;
+  width: 6vw;
+  position: relative;
+  cursor: pointer;
+
+  &-name {
+    width: 100%;
+    font-size: 0.8rem;
+    position: absolute;
+    top: -50px;
+    text-align: center;
+    cursor: default;
+    user-select: none;
+  }
+
+  &-code {
+    position: absolute;
+    left: 50%;
+    bottom: -3.35rem;
+    transform: translateX(-50%);
+  }
+}
+
+.glucose-n {
+  background-image: linear-gradient(
+    to bottom right,
+    red 45%,
+    rgb(197, 197, 197) 45%,
+    rgb(197, 197, 197) 60%,
+    rgb(253, 253, 253) 60%
+  );
+}
+
+.glucose-p {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(245, 245, 10) 45%,
+    rgb(197, 197, 197) 45%,
+    rgb(197, 197, 197) 60%,
+    rgb(253, 253, 253) 60%
+  );
+}
+
+.glucose-p-g {
+  background-image: linear-gradient(
+    to bottom right,
+    yellow 45%,
+    white 45%,
+    white 55%,
+    rgb(197, 197, 197) 55%,
+    rgb(197, 197, 197) 60%,
+    rgb(253, 253, 253) 60%
+  );
+}
+
+.lysine-n {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(212, 191, 122) 45%,
+    rgb(197, 197, 197) 45%,
+    rgb(197, 197, 197) 60%,
+    rgb(253, 253, 253) 60%
+  );
+}
+
+.lysine-p {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(97, 54, 153) 45%,
+    rgb(197, 197, 197) 45%,
+    rgb(197, 197, 197) 60%,
+    rgb(253, 253, 253) 60%
+  );
+}
+
+.ornithine-n {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(212, 191, 122) 45%,
+    rgb(197, 197, 197) 45%,
+    rgb(197, 197, 197) 60%,
+    rgb(253, 253, 253) 60%
+  );
+}
+
+.ornithine-p {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(97, 54, 153) 45%,
+    rgb(197, 197, 197) 45%,
+    rgb(197, 197, 197) 60%,
+    rgb(253, 253, 253) 60%
+  );
+}
+
+.h2s-n {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(241, 207, 94) 50%,
+    rgb(253, 253, 253) 50%
+  );
+}
+
+.h2s-p {
+  position: relative;
+  background-image: linear-gradient(
+      to bottom,
+      purple 30%,
+      rgba(255, 255, 255, 0) 30%
+    ),
+    linear-gradient(
+      to bottom right,
+      rgba(241, 207, 94, 1) 50%,
+      rgba(253, 253, 253, 1) 50%
+    );
+
+  &::after {
+    position: absolute;
+    content: '';
+    height: 10px;
+    width: 80%;
+    background-color: rgba(241, 207, 94, 1);
+    top: 0;
+    left: 0;
+    border-bottom-right-radius: 20px;
+  }
+}
+
+.h2s-indole {
+  background-image: linear-gradient(
+      to bottom right,
+      rgb(241, 207, 94) 50%,
+      rgba(255, 255, 255, 0) 50%
+    ),
+    linear-gradient(to bottom left, red 35%, white 35%);
+}
+
+.adonitol-n {
+  background-image: linear-gradient(
+    to bottom right,
+    red 50%,
+    rgb(255, 255, 255) 50%
+  );
+}
+
+.adonitol-p {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(245, 245, 10) 50%,
+    rgb(255, 255, 255) 50%
+  );
+}
+
+.lactose-n {
+  background-image: linear-gradient(
+    to bottom right,
+    red 50%,
+    rgb(255, 255, 255) 50%
+  );
+}
+
+.lactose-p {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(245, 245, 10) 50%,
+    rgb(255, 255, 255) 50%
+  );
+}
+
+.arabinose-n {
+  background-image: linear-gradient(
+    to bottom right,
+    red 50%,
+    rgb(255, 255, 255) 50%
+  );
+}
+
+.arabinose-p {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(245, 245, 10) 50%,
+    rgb(255, 255, 255) 50%
+  );
+}
+
+.sorbitol-n {
+  background-image: linear-gradient(
+    to bottom right,
+    red 50%,
+    rgb(255, 255, 255) 50%
+  );
+}
+
+.sorbitol-p {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(245, 245, 10) 50%,
+    rgb(255, 255, 255) 50%
+  );
+}
+
+.vp-n {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(241, 207, 94) 50%,
+    rgb(253, 253, 253) 50%
+  );
+}
+
+.vp-p {
+  background-image: linear-gradient(
+      to bottom right,
+      rgb(241, 207, 94) 50%,
+      rgba(255, 255, 255, 0) 50%
+    ),
+    linear-gradient(to bottom left, red 35%, white 35%);
+}
+
+.dulcitol-n {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(82, 146, 39) 50%,
+    rgb(253, 253, 253) 50%
+  );
+}
+
+.dulcitol-p {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(245, 245, 10) 50%,
+    rgb(255, 255, 255) 50%
+  );
+}
+
+.phenylalanine {
+  background-image: linear-gradient(
+    to bottom right,
+    brown 50%,
+    rgb(255, 255, 255) 50%
+  );
+}
+
+.urea-n {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(241, 207, 94) 50%,
+    rgb(253, 253, 253) 50%
+  );
+}
+
+.urea-p {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(233, 62, 224) 50%,
+    rgb(253, 253, 253) 50%
+  );
+}
+
+.citrate-n {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(32, 126, 87) 50%,
+    rgb(253, 253, 253) 50%
+  );
+}
+
+.citrate-p {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(27, 106, 138) 50%,
+    rgb(253, 253, 253) 50%
+  );
+}

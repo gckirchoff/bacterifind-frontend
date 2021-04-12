@@ -1,0 +1,36 @@
+*,
+*::afer,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  // background-image: linear-gradient(to bottom right, #8fdde7, #b6e5d8);
+  background-color: rgb(196, 231, 245);
+  font-family: Lato;
+}
+
+.bacterifind-title {
+  font-family: aldrich;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  letter-spacing: 2.5px;
+  background-image: linear-gradient(
+    to right top,
+    rgb(44, 44, 44) 55%,
+    rgb(212, 211, 211)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
