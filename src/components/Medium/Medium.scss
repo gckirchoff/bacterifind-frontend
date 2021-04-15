@@ -1,76 +1,3 @@
-// .medium-container {
-//   width: 7vw;
-//   position: relative;
-//   cursor: pointer;
-
-//   .medium-name {
-//     width: 100%;
-//     font-size: 0.8rem;
-//     position: absolute;
-//     top: -42px;
-//     text-align: center;
-//   }
-
-//   .medium {
-//     border: 1px solid black;
-//     height: 60px;
-//     width: 100%;
-//     background-color: white;
-//   }
-
-//   .glucose-n {
-//     background-image: linear-gradient(
-//       to bottom right,
-//       red 45%,
-//       rgb(197, 197, 197) 45%,
-//       rgb(197, 197, 197) 60%,
-//       rgb(253, 253, 253) 60%
-//     );
-//   }
-
-//   .glucose-p {
-//     background-image: linear-gradient(
-//       to bottom right,
-//       yellow 45%,
-//       rgb(197, 197, 197) 45%,
-//       rgb(197, 197, 197) 60%,
-//       rgb(253, 253, 253) 60%
-//     );
-//   }
-
-//   .glucose-p-g {
-//     background-image: linear-gradient(
-//       to bottom right,
-//       yellow 45%,
-//       white 45%,
-//       white 55%,
-//       rgb(197, 197, 197) 55%,
-//       rgb(197, 197, 197) 60%,
-//       rgb(253, 253, 253) 60%
-//     );
-//   }
-
-//   .lysine-n {
-//     background-image: linear-gradient(
-//       to bottom right,
-//       red 45%,
-//       rgb(197, 197, 197) 45%,
-//       rgb(197, 197, 197) 60%,
-//       rgb(253, 253, 253) 60%
-//     );
-//   }
-
-//   .lysine-p {
-//     background-image: linear-gradient(
-//       to bottom right,
-//       yellow 45%,
-//       rgb(197, 197, 197) 45%,
-//       rgb(197, 197, 197) 60%,
-//       rgb(253, 253, 253) 60%
-//     );
-//   }
-// }
-
 .medium {
   border: 1px solid black;
   height: 60px;
@@ -347,4 +274,12 @@
     rgb(27, 106, 138) 50%,
     rgb(253, 253, 253) 50%
   );
+}
+
+@media screen and (max-width: 850px) {
+  .medium-name {
+    transform: rotate(-90deg);
+    top: -3.7rem;
+    text-align: left;
+  }
 }

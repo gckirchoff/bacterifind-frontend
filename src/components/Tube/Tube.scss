@@ -121,3 +121,13 @@
   background-color: rgba(85, 147, 218, 0.4);
   margin-top: 3rem;
 }
+
+@media screen and (max-width: 450px) {
+  .tube {
+    width: 96vw;
+  }
+
+  .id-calc-container {
+    width: 100vw;
+  }
+}
