@@ -12,7 +12,7 @@ const NotesPage = () => {
   const onSignup = async (signupInfo) => {
     const { data } = await axios.post(
       process.env.NODE_ENV === 'production'
-        ? '/api/v1/users/login'
+        ? '/api/v1/users/signup'
         : 'http://127.0.0.1:3005/api/v1/users/signup',
       signupInfo
     );
