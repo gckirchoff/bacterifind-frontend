@@ -2,20 +2,32 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import Tube from './components/Tube/Tube';
+import NavBar from './components/NavBar/NavBar';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import MainPage from './pages/MainPage/MainPage';
+import NotesPage from './pages/NotesPage/NotesPage';
 
 const App = () => {
   return (
     <>
-      <h1 className="bacterifind-title">Bacterifind</h1>
-      <Tube />
+      <NavBar />
+      <Switch>
+        <Route exact path="/">
+          <MainPage />
+        </Route>
+        <Route path="/notes">
+          <NotesPage />
+        </Route>
+      </Switch>
     </>
   );
 };
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </BrowserRouter>,
   document.getElementById('root')
 );

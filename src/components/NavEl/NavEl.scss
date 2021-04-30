@@ -1,0 +1,47 @@
+.nav-el {
+  box-sizing: border-box;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  margin-right: 2rem;
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  cursor: pointer;
+  text-transform: capitalize;
+
+  &::after {
+    position: absolute;
+    content: '';
+    background-color: black;
+    height: 1px;
+    width: 100%;
+    left: 0;
+    bottom: -1px;
+    transform: scaleX(0);
+    transition: all 0.1s ease-in;
+  }
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .nav-el {
+    margin-right: 0;
+  }
+}
+
+.link,
+.link:hover,
+.link:focus,
+.link:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-el,
+.nav-el:hover,
+.nav-el:focus,
+.nav-el:active {
+  text-decoration: none;
+  color: inherit;
+}

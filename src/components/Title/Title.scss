@@ -1,0 +1,22 @@
+.bacterifind-title {
+  font-family: aldrich;
+  margin: 0;
+  margin-left: 0.4rem;
+  font-size: 3rem;
+  text-align: center;
+  letter-spacing: 2.5px;
+  background-image: linear-gradient(
+    to right top,
+    rgb(44, 44, 44) 55%,
+    rgb(212, 211, 211)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@media screen and (max-width: 450px) {
+  .bacterifind-title {
+    margin-left: 0;
+  }
+}

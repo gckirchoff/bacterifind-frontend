@@ -214,9 +214,9 @@ const Tube = () => {
   const handleSearchClick = async () => {
     try {
       const res = await axios.get(
-        // `http://127.0.0.1:3005/api/v1/results/${finalCode}` for development
-        // `/api/v1/results/${finalCode}` relative url for SSR
-        `/api/v1/results/${finalCode}`
+        process.env.NODE_ENV === 'production'
+          ? `/api/v1/results/${finalCode}`
+          : `http://127.0.0.1:3005/api/v1/results/${finalCode}`
       );
       setNotFound(false);
       setResult(res.data.data.result);
