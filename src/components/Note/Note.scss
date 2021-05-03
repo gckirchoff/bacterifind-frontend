@@ -1,0 +1,61 @@
+.note {
+  background-color: rgba(143, 212, 233, 0.5);
+  padding-top: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  position: relative;
+  border: 1px solid rgba(85, 147, 218, 0.7);
+
+  .note-date {
+    margin-bottom: 0.8rem;
+  }
+
+  .date-border {
+    height: 1px;
+    width: 100%;
+    background-color: rgba(85, 147, 218, 0.7);
+    margin-bottom: 0.8rem;
+  }
+
+  .bottom-border {
+    height: 1px;
+    width: 100%;
+    background-color: rgba(85, 147, 218, 0.7);
+  }
+
+  .note-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    height: 2.3rem;
+
+    .note-button-container {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+
+      .note-button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+
+        &:hover {
+          background-color: rgba(143, 212, 233, 1);
+        }
+      }
+    }
+
+    .note-button-container-left {
+      border-left: 1px solid rgba(85, 147, 218, 0.7);
+    }
+  }
+
+  h5 {
+    margin: 0;
+  }
+
+  .margin-left-small {
+    margin-left: 0.8rem;
+  }
+}
