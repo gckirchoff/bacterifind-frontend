@@ -64,3 +64,28 @@ export const editNote = (id) => {
     payload: id,
   };
 };
+
+export const cancelEdit = (id) => {
+  return {
+    type: UserActionTypes.EDIT_CANCEL,
+    payload: id,
+  };
+};
+
+export const deleteNote = (id) => {
+  return async (dispatch) => {
+    try {
+      await axios.delete(
+        process.env.NODE_ENV === 'production'
+          ? `/api/v1/notes/${id}`
+          : `http://127.0.0.1:3005/api/v1/notes/${id}`
+      );
+      dispatch({
+        type: UserActionTypes.DELETE_NOTE,
+        payload: id,
+      });
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+};

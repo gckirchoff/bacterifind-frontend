@@ -1,9 +1,18 @@
 import React from 'react';
 import './NoteEditor.scss';
+import { useDispatch } from 'react-redux';
+import { deleteNote, cancelEdit } from '../../state';
 
 const NoteEditor = ({ note }) => {
+  const dispatch = useDispatch();
   return (
     <div className="note">
+      <button
+        onClick={() => dispatch(cancelEdit(note._id))}
+        className="cancel-edit"
+      >
+        Cancel
+      </button>
       <h5 className="note-date margin-left-small">
         {new Date(note.date).toString().slice(0, 21)}
       </h5>
@@ -32,7 +41,12 @@ const NoteEditor = ({ note }) => {
           </button>
         </div>
         <div className="note-button-container note-button-container-left">
-          <button className="note-button">Delete</button>
+          <button
+            onClick={() => dispatch(deleteNote(note._id))}
+            className="note-button"
+          >
+            Delete
+          </button>
         </div>
       </div>
     </div>

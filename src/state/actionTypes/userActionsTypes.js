@@ -4,4 +4,6 @@ export const UserActionTypes = {
   LOG_OUT: 'LOG_OUT',
   CREATE_NOTE: 'CREATE_NOTE',
   EDIT_NOTE: 'EDIT_NOTE',
+  EDIT_CANCEL: 'EDIT_CANCEL',
+  DELETE_NOTE: 'DELETE_NOTE',
 };

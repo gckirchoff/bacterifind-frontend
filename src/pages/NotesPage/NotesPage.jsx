@@ -12,9 +12,9 @@ import { login, signup, createNote } from '../../state';
 const NotesPage = () => {
   const dispatch = useDispatch();
   const reduxUser = useSelector((state) => state.user.user);
-  console.log(reduxUser);
-  const [user, setUser] = useState(null);
-  const [notes, setNotes] = useState([]);
+  // console.log(reduxUser);
+  // const [user, setUser] = useState(null);
+  // const [notes, setNotes] = useState([]);
 
   const onSignup = async (signupInfo) => {
     // const { data } = await axios.post(
@@ -67,7 +67,7 @@ const NotesPage = () => {
         development.)
       </p>
       <p>State managed by Redux: {reduxUser !== null ? reduxUser.name : ''}</p>
-      <p>State managed by React: {user !== null ? user.name : ''}</p>
+      {/* <p>State managed by React: {user !== null ? user.name : ''}</p> */}
       {reduxUser ? (
         <div>
           Hi {reduxUser.name}

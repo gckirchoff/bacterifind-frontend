@@ -1,7 +1,7 @@
 import React from 'react';
 import './Note.scss';
 import { useDispatch } from 'react-redux';
-import { editNote } from '../../state';
+import { editNote, deleteNote } from '../../state';
 
 const Note = ({ note }) => {
   const dispatch = useDispatch();
@@ -31,7 +31,15 @@ const Note = ({ note }) => {
           </button>
         </div>
         <div className="note-button-container note-button-container-left">
-          <button className="note-button">Delete</button>
+          <button
+            onClick={() => {
+              dispatch(deleteNote(note._id));
+              console.log('clicked');
+            }}
+            className="note-button"
+          >
+            Delete
+          </button>
         </div>
       </div>
     </div>
