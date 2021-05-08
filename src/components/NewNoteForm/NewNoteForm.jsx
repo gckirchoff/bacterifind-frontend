@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import './NewNoteForm.scss';
 
-const NewNoteForm = ({ onSubmit }) => {
+const NewNoteForm = ({ onSubmit, defaultCode, marginLeft }) => {
   const {
     register,
     handleSubmit,
@@ -10,12 +10,25 @@ const NewNoteForm = ({ onSubmit }) => {
   } = useForm();
 
   return (
-    <div className="new-note-form">
+    <div
+      className={`new-note-form-container ${
+        marginLeft ? 'margin-left-note-form' : ''
+      }`}
+    >
       <h2>New Note</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input placeholder="codeNumber" {...register('codeNumber')} />
-        <input placeholder="comments" {...register('comments')} />
-        <input type="submit" />
+      <form className="new-note-form" onSubmit={handleSubmit(onSubmit)}>
+        <input
+          className="code-input"
+          defaultValue={defaultCode ? defaultCode : ''}
+          placeholder="code"
+          {...register('codeNumber')}
+        />
+        <textarea
+          className="comments-input"
+          placeholder="comments"
+          {...register('comments')}
+        ></textarea>
+        <input className="new-note-submit-btn" type="submit" />
       </form>
     </div>
   );

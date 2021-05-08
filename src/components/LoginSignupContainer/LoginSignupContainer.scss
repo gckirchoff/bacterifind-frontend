@@ -1,0 +1,89 @@
+.login-signup-container {
+  margin-top: 4rem;
+  overflow: hidden;
+  background-color: white;
+  padding: 40px 50px 30px 30px;
+  display: flex;
+  justify-content: space-between;
+  width: 45%;
+  box-shadow: 2px 5px 10px 4px rgba(2, 128, 144, 0.25);
+  border-radius: 10px;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 850px;
+    height: 850px;
+    border-top-left-radius: 40%;
+    border-top-right-radius: 45%;
+    border-bottom-left-radius: 35%;
+    border-bottom-right-radius: 40%;
+    z-index: 0;
+  }
+
+  &::before {
+    left: 40%;
+    bottom: -110%;
+    background-color: rgba(81, 130, 182, 0.2);
+    animation-name: rotate-flow;
+    animation-duration: 14s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &::after {
+    left: 35%;
+    bottom: -105%;
+    background-color: rgba(4, 160, 180, 0.25);
+    animation-name: rotate-flow;
+    animation-duration: 17s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes rotate-flow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .login-signup-container {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .login-signup-container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .login-signup-container {
+    width: 98%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .login-signup-container {
+    flex-direction: column;
+    margin-bottom: 2rem;
+
+    &::before {
+      bottom: -60%;
+      left: -50%;
+    }
+
+    &::after {
+      bottom: -65%;
+      left: -55%;
+    }
+  }
+}

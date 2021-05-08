@@ -2,10 +2,26 @@ import React, { useState, useEffect } from 'react';
 import Medium from '../Medium/Medium';
 import SearchButton from '../SearchButton/SearchButton';
 import BacteriaResult from '../BacteriaResult/BacteriaResult';
+import NewNoteForm from '../NewNoteForm/NewNoteForm';
 import './Tube.scss';
 import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { createNote } from '../../state';
 
 const Tube = () => {
+  const dispatch = useDispatch();
+  const reduxUser = useSelector((state) => state.user.user);
+  const onNewNoteCreation = async (noteInfo) => {
+    // const { data } = await axios.post(
+    //   process.env.NODE_ENV === 'production'
+    //     ? '/api/v1/notes'
+    //     : 'http://127.0.0.1:3005/api/v1/notes',
+    //   { ...noteInfo, user: user.id, date: Date.now() }
+    // );
+    // console.log(data);
+    // setNotes([...notes, data.data.newNote]);
+    dispatch(createNote(noteInfo, reduxUser.id));
+  };
   const [glucose, setGlucose] = useState({ result: 'glucose-n', code: 0 });
   const [lysine, setLysine] = useState({ result: 'lysine-n', code: 0 });
   const [ornithine, setOrnithine] = useState({
@@ -32,6 +48,7 @@ const Tube = () => {
   const [idFive, setIdFive] = useState(0);
   const [result, setResult] = useState(null);
   const [notFound, setNotFound] = useState(false);
+  const [found, setFound] = useState(false);
 
   const handleGlucose = () => {
     glucose.result === 'glucose-n'
@@ -219,10 +236,12 @@ const Tube = () => {
           : `http://127.0.0.1:3005/api/v1/results/${finalCode}`
       );
       setNotFound(false);
+      setFound(true);
       setResult(res.data.data.result);
     } catch {
       setResult(null);
       setNotFound(true);
+      setFound(false);
     }
   };
 
@@ -303,6 +322,14 @@ const Tube = () => {
           );
         })}
       {notFound && <h2>No bacteria found</h2>}
+      {found && reduxUser !== null && (
+        <NewNoteForm
+          key={finalCode}
+          onSubmit={onNewNoteCreation}
+          defaultCode={finalCode}
+          marginLeft
+        />
+      )}
     </>
   );
 };

@@ -72,6 +72,25 @@ export const cancelEdit = (id) => {
   };
 };
 
+export const updateNote = (comments, id) => {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.patch(
+        process.env.NODE_ENV === 'production'
+          ? `/api/v1/notes/${id}`
+          : `http://127.0.0.1:3005/api/v1/notes/${id}`,
+        { comments }
+      );
+      dispatch({
+        type: UserActionTypes.UPDATE_NOTE,
+        payload: data.data.note,
+      });
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+};
+
 export const deleteNote = (id) => {
   return async (dispatch) => {
     try {

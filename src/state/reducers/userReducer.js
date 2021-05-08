@@ -38,6 +38,14 @@ const userReducer = produce((state = initialState, action) => {
       state.user.notes.push(action.payload);
       break;
 
+    case UserActionTypes.UPDATE_NOTE:
+      action.payload.editing = false;
+      const updateIndex = state.user.notes.findIndex(
+        (note) => note._id === action.payload._id
+      );
+      if (updateIndex !== -1) state.user.notes[updateIndex] = action.payload;
+      break;
+
     case UserActionTypes.DELETE_NOTE:
       const deleteIndex = state.user.notes.findIndex(
         (note) => note._id === action.payload

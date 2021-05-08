@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './NoteEditor.scss';
 import { useDispatch } from 'react-redux';
-import { deleteNote, cancelEdit } from '../../state';
+import { deleteNote, cancelEdit, updateNote } from '../../state';
 
 const NoteEditor = ({ note }) => {
+  const [updateComment, setUpdateComment] = useState(note.comments);
   const dispatch = useDispatch();
+
+  const handleChange = (event) => {
+    setUpdateComment(event.target.value);
+  };
+
   return (
     <div className="note">
       <button
@@ -23,7 +29,8 @@ const NoteEditor = ({ note }) => {
         </h5>
       )}
       <textarea
-        defaultValue={note.comments}
+        value={updateComment}
+        onChange={handleChange}
         name="note-editor"
         className="note-editor margin-left-small"
       ></textarea>
@@ -33,7 +40,7 @@ const NoteEditor = ({ note }) => {
         <div className="note-button-container">
           <button
             onClick={() => {
-              console.log('clicked');
+              dispatch(updateNote(updateComment, note._id));
             }}
             className="note-button"
           >
