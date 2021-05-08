@@ -20,7 +20,7 @@ const NewNoteForm = ({ onSubmit, defaultCode, marginLeft }) => {
         <input
           className="code-input"
           defaultValue={defaultCode ? defaultCode : ''}
-          placeholder="code"
+          placeholder="code (optional)"
           {...register('codeNumber')}
         />
         <textarea
