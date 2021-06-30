@@ -5,6 +5,25 @@ import LoginSignupContainer from '../../components/LoginSignupContainer/LoginSig
 import './NotesPage.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { createNote } from '../../state';
+import { motion } from 'framer-motion';
+
+const notesPageVariants = {
+  hidden: {
+    x: '100vw',
+  },
+  visible: {
+    x: 0,
+    transition: {
+      ease: 'easeInOut',
+    },
+  },
+  exit: {
+    x: '100vw',
+    transition: {
+      ease: 'easeInOut',
+    },
+  },
+};
 
 const NotesPage = () => {
   const dispatch = useDispatch();
@@ -15,7 +34,13 @@ const NotesPage = () => {
   };
 
   return (
-    <div className="notes-page">
+    <motion.div
+      className="notes-page"
+      variants={notesPageVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
       {reduxUser ? (
         <div className="notes-section">
           <p>Hello, {reduxUser.name}</p>
@@ -29,7 +54,7 @@ const NotesPage = () => {
       ) : (
         <LoginSignupContainer />
       )}
-    </div>
+    </motion.div>
   );
 };
 
