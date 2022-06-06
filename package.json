@@ -8,6 +8,7 @@
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
+    "framer-motion": "^4.1.17",
     "immer": "^8.0.1",
     "moment": "^2.29.1",
     "react": "^17.0.2",
@@ -27,6 +28,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "e2e test": "",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -46,5 +48,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cypress": "^6.5.0",
+    "react-test-renderer": "^17.0.2"
   }
 }

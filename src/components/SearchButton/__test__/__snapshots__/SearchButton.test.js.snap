@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<button
+  className="search-btn"
+  data-testid="search-button"
+>
+  Search 
+  40002
+</button>
+`;
+
+exports[`matches snapshot 2 1`] = `
+<button
+  className="search-btn"
+  data-testid="search-button"
+>
+  Search 
+  40003
+</button>
+`;
