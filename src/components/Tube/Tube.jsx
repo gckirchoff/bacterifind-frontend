@@ -46,7 +46,7 @@ const Tube = () => {
   const [idThree, setIdThree] = useState(0);
   const [idFour, setIdFour] = useState(0);
   const [idFive, setIdFive] = useState(0);
-  const [result, setResult] = useState(null);
+  const [microorganisms, setMicroorganisms] = useState([]);
   const [notFound, setNotFound] = useState(false);
   const [found, setFound] = useState(false);
 
@@ -237,9 +237,9 @@ const Tube = () => {
       );
       setNotFound(false);
       setFound(true);
-      setResult(res.data.data.result);
+      setMicroorganisms(res.data.data.result.microorganisms);
     } catch {
-      setResult(null);
+      setMicroorganisms([]);
       setNotFound(true);
       setFound(false);
     }
@@ -315,12 +315,11 @@ const Tube = () => {
       </div>
 
       <div className="border" />
-      {result &&
-        result.microorganisms.map((bacteria) => {
-          return (
-            <BacteriaResult bacteria={bacteria} key={bacteria.microorganism} />
-          );
-        })}
+      {microorganisms.map((bacteria) => {
+        return (
+          <BacteriaResult bacteria={bacteria} key={bacteria.microorganism} />
+        );
+      })}
       {notFound && <h2>No bacteria found</h2>}
       {found && reduxUser !== null && (
         <NewNoteForm
